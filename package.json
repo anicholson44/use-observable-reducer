@@ -1,0 +1,28 @@
+{
+  "name": "use-observable-reducer",
+  "version": "1.0.0",
+  "description": "React hook to provide a reducer that can be observed via an RxJS subject",
+  "main": "use-observable-reducer.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anicholson44/use-observable-reducer.git"
+  },
+  "keywords": [
+    "react",
+    "hook",
+    "hooks",
+    "useReducer",
+    "rxjs",
+    "useObservableReducer",
+    "redux-observable"
+  ],
+  "author": "Andrew Nicholson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anicholson44/use-observable-reducer/issues"
+  },
+  "homepage": "https://github.com/anicholson44/use-observable-reducer#readme"
+}
