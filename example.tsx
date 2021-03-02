@@ -1,6 +1,7 @@
-# Example usage - debouncing text input and updating server state after debounce time
+import React from "react";
+import { filter, debounceTime, tap } from "rxjs/operators";
+import useObservableReducer from ".";
 
-```
 interface Action {
   type: string;
   payload?: any;
@@ -25,7 +26,8 @@ export const Example = () => {
   const [state, dispatch] = useObservableReducer(
     reducer,
     { text: "" }, // initialState
-    ({ subject, dispatch }) => [ // subscribe function which takes subject and dispatch and returns array of subscriptions
+    ({ subject, dispatch }) => [
+      // subscribe function which takes subject and dispatch and returns array of subscriptions
       subject
         .pipe(
           filter(({ action }) => action.type === "CHANGE_TEXT"),
@@ -49,4 +51,3 @@ export const Example = () => {
     ></input>
   );
 };
-```
