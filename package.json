@@ -1,13 +1,15 @@
 {
   "name": "use-observable-reducer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React hook to provide a reducer that can be observed via an RxJS subject",
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build" : "tsc"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
