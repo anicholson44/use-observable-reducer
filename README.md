@@ -1,3 +1,7 @@
+# use-observable-reducer
+
+Custom react hook which allows you to get an RxJS subject that publishes the new state every time an action is dispatched to your reducer.
+
 # Example usage - debouncing text input and updating server state after debounce time
 
 ```
