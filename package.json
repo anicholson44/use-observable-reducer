@@ -24,5 +24,9 @@
   "bugs": {
     "url": "https://github.com/anicholson44/use-observable-reducer/issues"
   },
-  "homepage": "https://github.com/anicholson44/use-observable-reducer#readme"
+  "homepage": "https://github.com/anicholson44/use-observable-reducer#readme",
+  "dependencies": {
+    "react": "^17.0.1",
+    "rxjs": "^6.6.6"
+  }
 }

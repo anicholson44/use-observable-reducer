@@ -6,19 +6,18 @@ import React, {
   useState,
 } from "react";
 import { BehaviorSubject, Subject, Subscription } from "rxjs";
-import { Action } from "../store/reducer";
 
-export default <S>(
-  reducer: (state: S, action: any) => S,
+export default <S, A>(
+  reducer: (state: S, action: A) => S,
   initialState: S,
   subscribe: (init: {
-    subject: Subject<{ oldState: S; state: S; action: Action }>;
-    dispatch: Dispatch<Action>;
+    subject: Subject<{ oldState: S; state: S; action: A }>;
+    dispatch: Dispatch<A>;
   }) => Subscription[]
 ): [S, React.Dispatch<any>, Subscription[]] => {
   const subject = useMemo(
     () =>
-      new BehaviorSubject<{ oldState: S; state: S; action: Action }>({
+      new BehaviorSubject<{ oldState: S; state: S; action: A }>({
         oldState: initialState,
         state: initialState,
         action: { type: "__INIT__" },
