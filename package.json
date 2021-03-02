@@ -28,5 +28,8 @@
   "dependencies": {
     "react": "^17.0.1",
     "rxjs": "^6.6.6"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.2"
   }
 }
