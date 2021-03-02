@@ -1,10 +1,4 @@
-import React, {
-  useMemo,
-  useReducer,
-  Dispatch,
-  useEffect,
-  useState,
-} from "react";
+import { useMemo, useReducer, Dispatch, useEffect, useState } from "react";
 import { BehaviorSubject, Subject, Subscription } from "rxjs";
 
 export default <S, A>(
@@ -20,13 +14,13 @@ export default <S, A>(
       new BehaviorSubject<{ oldState: S; state: S; action: A }>({
         oldState: initialState,
         state: initialState,
-        action: { type: "__INIT__" },
+        action: { type: "__INIT__" } as any,
       }),
     []
   );
 
   const r = useMemo(
-    () => (state: S, action) => {
+    () => (state: S, action: A) => {
       const newState = reducer(state, action);
       subject.next({ oldState: state, state: newState, action });
       return newState;
@@ -36,14 +30,14 @@ export default <S, A>(
 
   const [state, dispatch] = useReducer(r, initialState);
 
-  const [queue, setQueue] = useState([]);
+  const [queue, setQueue] = useState<A[]>([]);
 
   useEffect(() => {
     queue.forEach((action) => dispatch(action));
     queue.splice(0, queue.length);
   }, [queue]);
 
-  const d = (action) => {
+  const d = (action: A) => {
     const newQueue = [...queue, action];
     setQueue(newQueue);
     return newQueue;
