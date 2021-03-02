@@ -1,6 +1,6 @@
 {
   "name": "use-observable-reducer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React hook to provide a reducer that can be observed via an RxJS subject",
   "main": "use-observable-reducer.ts",
   "scripts": {
